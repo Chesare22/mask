@@ -10,8 +10,6 @@ defmodule Mask.CLI do
     |> process()
     |> Bytes4.to_string()
     |> IO.puts()
-
-    System.stop(0)
   end
 
   @doc """
