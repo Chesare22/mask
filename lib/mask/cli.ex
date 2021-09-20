@@ -3,7 +3,7 @@ defmodule Mask.CLI do
     argv
     |> parse_args()
     |> process()
-    |> Bytes4.to_string()
+    |> Bytes.join(".")
     |> IO.puts()
   end
 

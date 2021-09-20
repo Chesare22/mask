@@ -5,5 +5,5 @@ defmodule Mask do
     <<ones::bitstring, ceros::bitstring>>
   end
 
-  def wildcard(n), do: Bytes4.subtract(Mask.of(32), Mask.of(n))
+  def wildcard(n), do: Bytes.subtract(Mask.of(32), Mask.of(n))
 end
