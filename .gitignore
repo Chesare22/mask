@@ -27,3 +27,6 @@ mask_cli-*.tar
 
 # Code editor
 /.elixir_ls
+
+# Executable files
+/mask
