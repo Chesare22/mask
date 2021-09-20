@@ -5,7 +5,13 @@ defmodule Mask.CLI do
   table of the last _n_ issues in a github project
   """
   def main(argv) do
-    argv |> parse_args() |> process()
+    argv
+    |> parse_args()
+    |> process()
+    |> Bytes4.to_string()
+    |> IO.puts()
+
+    System.stop(0)
   end
 
   @doc """
@@ -30,15 +36,9 @@ defmodule Mask.CLI do
     end
   end
 
-  def process({number, :wildcard}) do
-    output = Mask.wildcard(number) |> Bytes4.to_string()
-    IO.puts(:stdio, output)
-    System.stop(0)
-  end
+  def process({number, :wildcard}),
+    do: Mask.wildcard(number)
 
-  def process(number) do
-    output = Mask.of(number) |> Bytes4.to_string()
-    IO.puts(:stdio, output)
-    System.stop(0)
-  end
+  def process(number),
+    do: Mask.of(number)
 end
