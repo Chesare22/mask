@@ -6,5 +6,4 @@ defmodule Mask do
   end
 
   def wildcard(n), do: Bytes4.subtract(Mask.of(32), Mask.of(n))
-  def wildcard_str(n), do: n |> wildcard |> Bytes4.to_string()
 end
