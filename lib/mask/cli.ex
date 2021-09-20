@@ -16,10 +16,10 @@ defmodule Mask.CLI do
 
     case parse do
       {[wildcard: true], [number], _} ->
-        {Integer.parse(number) |> Kernel.elem(0), :wildcard}
+        {Integer.parse(number) |> elem(0), :wildcard}
 
       {_, [number], _} ->
-        Integer.parse(number) |> Kernel.elem(0)
+        Integer.parse(number) |> elem(0)
     end
   end
 
