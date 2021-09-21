@@ -15,7 +15,7 @@ defmodule Bytes do
   converts each byte to an element in a list.
   """
   def map_list(<<>>, _), do: []
-  def map_list(<<head, tail::bitstring>>, fun), do: [fun.(head) | map_list(tail, fun)]
+  def map_list(<<head, tail::bitstring>>, fun), do: [fun.(<<head::8>>) | map_list(tail, fun)]
 
   def join(bytes, joiner \\ "")
   def join(<<>>, _), do: ""
