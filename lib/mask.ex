@@ -7,5 +7,5 @@ defmodule Mask do
 
   def of(_), do: raise(ArgumentError, "The mask must be an integer between 0 and 32")
 
-  def wildcard(n), do: Bytes.subtract(Mask.of(32), Mask.of(n))
+  def wildcard(n), do: Mask.of(n) |> Bytes.map(&Bitwise.bnot/1)
 end
