@@ -1,5 +1,5 @@
 defmodule Bytes do
-  def subtract(<<minuend>>, <<subtrahend>>), do: <<minuend - subtrahend>>
+  def subtract(<<>>, <<>>), do: <<>>
 
   def subtract(<<minuend, minuend_tail::bitstring>>, <<subtrahend, subtrahend_tail::bitstring>>),
     do: <<minuend - subtrahend, subtract(minuend_tail, subtrahend_tail)::bitstring>>
