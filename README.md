@@ -1,6 +1,6 @@
 # Mask
 
-Simple command-line application that calculates the subnet mask given a number. If the flag `--wildcard` (or `-w`) is passed, then it calculates the wildcard (inverse) of the mask.
+Simple command-line application that converts the length of a network prefix to their dotted decimal notation. If the flag `--wildcard` or `-w` is passed, then it calculates the wildcard (inverse) of the mask.
 
 ## Examples
 
