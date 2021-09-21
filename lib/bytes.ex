@@ -10,6 +10,10 @@ defmodule Bytes do
   def map(<<>>, _), do: <<>>
   def map(<<head, tail::bitstring>>, fun), do: <<fun.(head)::8, map(tail, fun)::bitstring>>
 
+  @doc """
+  Similar to `Bytes.map/2`, but instead of converting a bitstring of bytes into another bitstring of the same size,
+  converts each byte to an element in a list.
+  """
   def map_list(<<>>, _), do: []
   def map_list(<<head, tail::bitstring>>, fun), do: [fun.(head) | map_list(tail, fun)]
 
