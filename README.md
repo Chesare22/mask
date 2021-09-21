@@ -40,10 +40,25 @@ This will generate a file called `mask`, without any extension.
 You can run the application by running the file created in the build step:
 
 ```powershell
-escript ./mask <int> [-w | --wildcard]
+escript ./mask <int> [-w | --wildcard] [-b | --binary]
 ```
 
-Where `<int>` is an integer between 0 and 32 to be converted as an `a.b.c.d` form, and the flag `--wildcard` (or `-w`) tells if it should calculate the wildcard instead of the mask.
+Where `<int>` is an integer between 0 and 32 representing the length of the mask. If the flag `--wildcard` (alias `-w`) is present, the program calculates the wildcard instead of the mask. If the flag `--binary` (alias `-b`) is present, the result is printed in a binary notation.
+
+More examples:
+
+```powershell
+escript ./mask 22 --binary -w
+00000000.00000000.00000011.11111111
+escript ./mask 22 -w
+0.0.3.255
+escript ./mask 22 --wildcard
+0.0.3.255
+escript ./mask 22
+255.255.252.0
+escript ./mask 22 -b
+11111111.11111111.11111100.00000000
+```
 
 ### Add as an alias in your terminal
 
